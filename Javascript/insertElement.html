@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert element</title>
+</head>
+<script>
+    function insertNum(){
+    let data = [1,4,5,32,56];
+    let newEl = document.getElementById('newEl').value;
+    newEl = parseInt(newEl)
+    let position = document.getElementById('position').value;
+    console.log(data)
+    // let arr = [...data.slice(0, position), newEl, ...data.slice(position, )]
+    for (let i = data.length-1; i>=0; i--)
+    {
+    if(i>=position){
+            data[i+1] = data[i]
+            if(i==position){
+                    data[i]=newEl
+                }
+            }
+    }
+    console.log(data)
+    }
+</script>
+<body>
+    <input type="text" placeholder="Enter element" id="newEl">
+    <input type="text" placeholder="Enter position" id="position">
+    <button onclick="insertNum()">INSERT</button>
+</body>
+</html>

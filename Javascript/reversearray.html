@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reverseArray</title>
+<script>
+    //Without recursion
+    let arr = [3,2,4,5,1,6]
+    let len = arr.length
+    let arr2 = []
+    let i = 0
+    while(i<len){
+        arr2.push(arr.pop())
+        i++
+    }
+    console.log(arr2)
+    //With recursion
+    let data = [5,12,42,23,54]
+    let temp
+    function customReverse(array, start, end){
+        console.log(data)
+        if(start<=end){
+            temp = data[start]
+            data[start] = data[end]
+            data[end] = temp
+            customReverse(data, start+1, end-1)
+        }
+    }
+    customReverse(data, 0, data.length-1)
+    console.log(data.reverse())
+</script>
+</head>
+
+<body>
+    <h1>REVERSE AN ARRAY WITH RECURSION</h1>
+</body>
+</html>
