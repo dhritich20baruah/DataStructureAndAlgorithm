@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search Recursive</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        font-family: sans-serif;
+    }
+</style>
+<script>
+    let data = [10, 15, 18, 34, 67]
+    let start = 0
+    let end = data.length-1
+    let find = 34
+    let position = undefined
+    function recursiveBinary(data, start, end){
+        mid=Math.floor((start+end)/2)
+        if(data[mid] === find){
+            position = mid
+            return true
+        }else if(data[mid]<find){
+            recursiveBinary(data, mid+1, end)
+        }else{
+            recursiveBinary(data, start, mid-1)
+        }
+    }
+
+    recursiveBinary(data, start, end)
+    console.log(position)
+</script>
+<body>
+    <h1>Binary Search Recursive</h1>
+    <a href="/Sorting.html">Go to sorting</a>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Queue</title>
+</head>
+<script>
+    class Queue{
+        constructor(size){
+            this.max = size
+            this.items = new Array(size)
+            this.currentSize = 0
+            this.rear = -1
+            this.front = -1
+        }
+    enqueue(val){
+        console.log("Front before Q ",this.front)
+        console.log("Rear before Q ",this.rear)
+
+        if(this.currentSize!=this.max){
+            if(this.rear==this.max-1){
+                this.rear = 0
+            }else{
+                this.rear++
+            }
+            this.items[this.rear]=val;
+            this.currentSize++
+            if((this.front == -1)){
+                this.front = this.rear
+            }
+        console.log("Front after Q ",this.front)
+        console.log("Rear after Q ",this.rear)    
+        }
+    }
+    dequeue(){
+        console.log("Front before DQ ",this.front)
+        console.log("Rear before DQ ",this.rear)
+        if(this.currentSize!=0){
+            this.items[this.front]=null
+            if(this.front==this.max){
+                this.front=0
+            }else{
+                this.front++
+            }
+            this.currentSize--
+        }else{
+            alert('queue is empty')
+        }
+        console.log("Front after DQ ",this.front)
+        console.log("Rear after DQ ",this.rear)
+    }
+    }
+
+
+let queue = new Queue(5)
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+queue.enqueue(4)
+queue.enqueue(5)
+
+console.log(queue.items)
+queue.dequeue()
+console.log(queue.items)
+
+queue.dequeue()
+console.log(queue.items)
+
+queue.enqueue(6)
+queue.enqueue(7)
+console.log(queue.items)
+queue.enqueue(8)
+console.log(queue.items)
+
+</script>
+<body>
+    <h1>Circular Queue</h1>
+</body>
+</html>
