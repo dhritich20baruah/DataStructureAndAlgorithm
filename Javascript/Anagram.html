@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings - Anagram</title>
+</head>
+<script>
+    function checkAnagram(str1, str2){
+        let ObjStr1={}
+        if(str1.length !== str2.length){
+            return false
+        }
+        for(ch of str1){
+        //    console.log(ch)
+           ObjStr1[ch] = (ObjStr1[ch] || 0) + 1 
+        }
+        console.log(ObjStr1)
+        for(ch of str2){
+            if(!ObjStr1[ch]){
+                return false
+            }
+            ObjStr1[ch]--
+        }
+        return true
+    }
+
+   console.log(checkAnagram("helllo", "lolheo"))
+</script>
+<body>
+    <h1>Strings - Anagram</h1>
+    <a href="/Palindrom.html">Palindrome</a>
+</body>
+<script>
+    function isAnagram(string1, string2) {
+  // convert both strings to lowercase
+  string1 = string1.toLowerCase();
+  string2 = string2.toLowerCase();
+
+  // check that both strings have the same length
+  if (string1.length !== string2.length) {
+    return false;
+  }
+
+  // create an object to store the character counts for each string
+  let charCounts1 = {};
+  let charCounts2 = {};
+
+  // count the number of occurrences of each character in both strings
+  for (let i = 0; i < string1.length; i++) {
+    let char1 = string1[i];
+    let char2 = string2[i];
+    console.log(char1, char2)
+    charCounts1[char1] = charCounts1[char1] ? charCounts1[char1] + 1 : 1;
+    charCounts2[char2] = charCounts2[char2] ? charCounts2[char2] + 1 : 1;
+  }
+
+  // compare the character counts for both strings
+  for (let char in charCounts1) {
+    if (charCounts1[char] !== charCounts2[char]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// example usage
+// console.log(isAnagram("listen", "silent")); // prints true
+// console.log(isAnagram("apple", "orange")); // prints false
+
+</script>
+</html>
