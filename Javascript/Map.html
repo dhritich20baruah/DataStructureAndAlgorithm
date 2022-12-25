@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<script>
+    let data = new Map([
+        ['name', "Delta"],
+        ['spects', true],
+        ['number', 38]
+    ])
+
+    //To add value
+    data.set('color', 'green')
+    //To check if key exist
+    console.log(data.has('number'))
+    //To get value of key
+    console.log(data.get('number'))
+    data.delete('name')
+    console.log(data)
+    //to clear data from map
+    // data.clear()
+
+    for(x of data){
+        console.log(x)
+        console.log(x[0]) //Gives the keys
+        console.log(x[1]) //Gives the values
+    }
+
+    data.forEach((val, key)=>{
+        console.log(val)
+        console.log(key)
+    })
+</script>
+<body>
+    <h1>MAP</h1>
+    <a href="/set.html">SET</a>
+</body>
+</html>

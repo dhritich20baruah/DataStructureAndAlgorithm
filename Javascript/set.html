@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set</title>
+</head>
+<script>
+    let data = new Set([1,2,3,2,3])
+    data.add({"email":"delta@mail.com"})
+    data.add(5)
+    data.add(1)
+    console.log(data.size)
+    console.log(data)
+    // data.clear()
+    data.delete(1)
+    console.log(data)
+    for(x of data){
+        console.log(x)
+    }
+
+</script>
+<body>
+    <h1>SET</h1>
+</body>
+</html>

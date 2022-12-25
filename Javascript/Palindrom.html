@@ -7,10 +7,23 @@
     <title>Palindrome</title>
 </head>
 <script>
-
+    function PalindromeCheck(str){
+        let start = 0
+        let end = str.length-1
+        while(start<end){
+         if(str[start]!=str[end]){
+            return false
+         }
+        start++
+        end--
+        }
+       return true
+    }
+    console.log(PalindromeCheck("asdfggfpsa"))
+ 
 </script>
 <body>
     <h1>Palindrome</h1>
-    <a href=""></a>
+    <a href="/MaximumOccuring.html">Maximum Occuring</a>
 </body>
 </html>

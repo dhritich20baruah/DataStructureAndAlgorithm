@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Table</title>
+</head>
+<script>
+    let data = {
+        name: 'Delta',
+        age: 35,
+        mail: "delta@mail.com",
+        getName: function(){
+            return this.name
+        }
+    }
+
+    data.contact = 1234
+
+    console.log(data.getName())
+    console.log(data)
+    delete data.age
+    console.log(data)
+
+    for(x in data){
+        console.log(x)
+        console.log(data[x])
+    }
+
+    console.log(Object.keys(data))
+    console.log(Object.values(data))
+    console.log(Object.entries(data))
+
+</script>
+<body>
+    <h1>Hash Table</h1>
+    <a href="/Map.html">Map</a>
+</body>
+</html>
