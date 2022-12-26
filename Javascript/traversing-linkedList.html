@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>traversing-linkedList.html</title>
+</head>
+<script>
+    class List{
+        constructor(data){
+            this.head = {
+                value: data,
+                next: null
+            };
+            this.tail = this.head
+            this.size = 1
+        }
+        appendNode(nodeData){
+            let newNode = {
+                value: nodeData,
+                next: null
+            };
+            this.tail.next = newNode //places the new node in the next of last node
+            this.tail = newNode //designates the new node as the new tail
+            this.size++
+        }
+        traversing(){
+            let counter = 0
+            let currentNode = this.head
+            while(counter<this.size){
+                console.log(currentNode)
+                currentNode=currentNode.next
+                counter++
+            }
+        }
+    }
+
+    let list = new List(200);
+    list.appendNode(300)
+    list.appendNode(400)
+    list.appendNode(400)
+    list.appendNode(400)
+    list.appendNode(400)
+    list.traversing()
+    console.log(list)
+</script>
+<body>
+    <h1>traversing-linkedList.html</h1>
+    <a href="/removeNode.html">Remove Node</a>
+</body>
+</html>
