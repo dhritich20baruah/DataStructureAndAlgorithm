@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Data Structure in Javascript</title>
+</head>
+<script>
+    class Node{
+        constructor(val)
+        {
+            this.value = val;
+            this.left = null;
+            this.right = null;
+        }
+    }
+
+    class BSTree{
+        constructor(){
+            this.root = null
+        }
+
+        isTreeEmpty(){
+            return this.root ===  null
+        }
+
+        makeTree(val) {
+            let newNode = new Node(val)
+            if(this.root===null){
+                this.root= newNode
+            }
+            else{
+                this.insertNode(this.root, newNode)
+            }
+        }
+
+        insertNode(root, newNode) {
+            if(root.value>newNode.value){
+                if(root.left===null){
+                    root.left = newNode
+                }else{
+                    this.insertNode(root.left, newNode)
+                }
+            } else {
+                if(root.right===null){
+                    root.right = newNode
+                }else{
+                    this.insertNode(root.right, newNode)
+                }
+            }
+        }
+    }
+
+    let bst = new BSTree()
+    bst.makeTree(20)
+    bst.makeTree(10)
+    bst.makeTree(5)
+    bst.makeTree(30)
+    bst.makeTree(40)
+    bst.makeTree(35)
+
+    console.log(bst)
+</script>
+<body>
+    <section style="margin: 5em; text-align: justify;font-family: sans-serif; ">
+        <h1 style="text-align: center;">Tree Data Structure in Javascript</h1>
+        <a href=""></a>
+        <p>
+            1. What is Tree Data Structure?
+            <br>
+             Tree is a hierarchical representation of data. Where data is represented by node and links are represented by edges.
+        </p>
+        <p>2. Why Binary?
+            <br>
+            Binary Tree can have only two nodes. They are Non Linear Data Structure.
+        </p>
+        <p>3. Rules
+            <br>
+            Left node will be smaller than root and the root will be smaller than right node. (LN &lt; Root &lt; RN)
+            <br>
+            Degree of nodes - Number of child max of 2 for Binary
+            <br>
+            Terminal node - Nodes without child.
+        </p>
+    </section>
+</body>
+</html>
