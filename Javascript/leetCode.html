@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function checkPalindrom(x){
+        let str = x.toString().split("").reverse().join("")
+        // console.log(str)
+        let start = 0
+        let end = str.length-1
+        while(start<end){
+            if(str[start]!=str[end]){
+                return false
+            }
+            start++
+            end--
+        }
+        return true
+    }
+
+    // console.log(checkPalindrom(121))
+
+    function convertToRoman(num) {
+    let numAr = num.toString().split('');
+    console.log(numAr)
+    let th = ["", "M", "MM", "MMM"];
+    let hu = ["",  "C",  "CC",  "CCC",  "CD", "D", "DC", "DCC", "DCCC", "CM"];
+    let te = ["",  "X",  "XX",  "XXX",  "XL", "L", "LX", "LXX", "LXXX", "XC"];
+    let un = ["",  "I",  "II",  "III",  "IV", "V", "VI", "VII", "VIII", "IX"];
+    
+    let result = ''
+    
+    if(numAr.length==4){
+        result = th[numAr[0]] + hu[numAr[1]] + te[numAr[2]] + un[numAr[3]]
+    }
+    if(numAr.length==3){
+        result = hu[numAr[0]] + te[numAr[1]] + un[numAr[2]]
+    }
+    if(numAr.length==2){
+        result = te[numAr[0]] + un[numAr[1]]
+    }
+    if(numAr.length==1){
+        result = un[numAr[0]]
+    }
+ 
+    return result;
+}
+
+function convertToInt(rom){
+    let num = rom.split('')
+    let arr = {
+        "I":1, "V":5, "X": 10, "L": 50, "C":100, "D":500, "M":1000
+    }
+    let count = 0
+    let i = 0
+
+    while(i<num.length){
+        if(arr[num[i]]<arr[num[i+1]]){
+            count += arr[num[i+1]] - arr[num[i]]
+            i += 2
+        }
+        else{
+            count += arr[num[i]]
+            i += 1
+        }
+    }
+    return count
+}
+
+strs = ["flower","flow","flight"]
+let arr = []
+let arr2 = []
+for (var i=0; i<strs.length; i++){
+    arr.push(strs[i].split(''))
+}
+console.log(arr2)
+</script>
+<body>
+    
+</body>
+</html>
