@@ -71,13 +71,17 @@ function convertToInt(rom){
     return count
 }
 
-strs = ["flower","flow","flight"]
-let arr = []
-let arr2 = []
-for (var i=0; i<strs.length; i++){
-    arr.push(strs[i].split(''))
+str = ["flow","flower","flight"]
+let ans = str[1].length
+let len = str.length
+for(var i=1; i<len; i++){
+    var j = 0;
+    while(j<str[i].length && str[i][j]){
+        j++
+        
+    }
 }
-console.log(arr2)
+
 </script>
 <body>
     
